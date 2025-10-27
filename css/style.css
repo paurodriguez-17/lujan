@@ -1,0 +1,511 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #fffafc;
+  color: #444;
+  overflow-x: hidden;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero .content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  background: rgba(255, 182, 193, 0.35);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+}
+
+.hero h1 {
+  font-size: 2.3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero button {
+  background: #ffd6e0;
+  border: none;
+  padding: 0.8rem 1.6rem;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero button:hover {
+  background: #ffb6c1;
+  transform: scale(1.05);
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ===== CATEGORÍAS ===== */
+main {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.categoria {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  transform: perspective(800px) rotateY(0deg);
+}
+
+.categoria:hover {
+  transform: perspective(800px) rotateY(10deg) scale(1.05);
+  box-shadow: 0 10px 25px rgba(255, 182, 193, 0.5);
+}
+
+.categoria img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  filter: brightness(0.8);
+  transition: filter 0.4s ease;
+}
+
+.categoria:hover img {
+  filter: brightness(1);
+}
+
+.categoria h3 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 240, 245, 0.8);
+  color: #ff82a9;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.8rem;
+  border-top: 1px solid #ffd6e0;
+  backdrop-filter: blur(4px);
+}
+
+/* ===== CARRUSEL ===== */
+.album-view {
+  max-width: 900px;
+  margin: 3rem auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 182, 193, 0.3);
+  padding: 2rem;
+  text-align: center;
+}
+
+.carousel {
+  position: relative;
+  perspective: 1200px;
+  height: 450px;
+  margin: 2rem 0;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: rotateY(90deg);
+  transition: all 0.8s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.note {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem;
+  border-radius: 10px;
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* ===== Carta tipo sobre animada ===== */
+.carta-sobre {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  height: 350px;
+  margin: 2rem auto;
+  background: #ffeef5;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.4);
+  cursor: pointer;
+  perspective: 1000px;
+  transition: transform 0.6s ease;
+}
+
+.carta-sobre .tapa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(180deg, #ffccd9, #ffb6c1);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transform-origin: top;
+  transform: rotateX(0deg);
+  transition: transform 0.6s ease;
+  z-index: 2;
+}
+
+.carta-sobre .contenido {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  background: linear-gradient(180deg, #fff0f5, #ffe6ef);
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1;
+}
+
+.carta-sobre h3 {
+  color: #ff82a9;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.carta-sobre p {
+  font-style: italic;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Al abrir el sobre */
+.carta-sobre.abierto .tapa {
+  transform: rotateX(-160deg);
+}
+
+/* Botón volver */
+button#volverCategorias {
+  margin-top: 1.5rem;
+  background: #ffb6c1;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+}
+
+button#volverCategorias:hover {
+  background: #ff82a9;
+}
+
+/* Partículas */
+canvas#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -5;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* ===== Flechas del carrusel ===== */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.2rem;
+  color: rgba(255, 130, 169, 0.8);
+  background: rgba(255, 255, 255, 0.6);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  z-index: 5;
+  box-shadow: 0 0 10px rgba(255, 182, 193, 0.4);
+}
+
+.arrow:hover {
+  background: #ffb6c1;
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.arrow.left {
+  left: 15px;
+}
+
+.arrow.right {
+  right: 15px;
+}
+
+/* ===== CARTAS INTERACTIVAS MODALES ===== */
+.cartas-titulo {
+  margin-top: 4rem;
+  color: #ff82a9;
+  font-weight: 600;
+}
+
+.cartas-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Portadas */
+.carta-portada {
+  width: 260px;
+  height: 180px;
+  background: linear-gradient(180deg, #ffe6ef, #ffd6e0);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(255, 182, 193, 0.4);
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.carta-portada:hover {
+  transform: scale(1.05) rotateY(10deg);
+  box-shadow: 0 10px 25px rgba(255, 182, 193, 0.6);
+}
+
+.carta-portada-contenido {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ff82a9;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  transition: background 0.4s;
+}
+
+.carta-portada:hover .carta-portada-contenido {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Modal */
+.modal-carta {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 240, 245, 0.8);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-carta.show {
+  display: flex;
+  animation: fadeInModal 0.5s ease;
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Carta grande con efecto 3D */
+.carta-modal {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  height: 340px;
+  perspective: 1000px;
+}
+
+.carta-modal .tapa {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(180deg, #ffccd9, #ffb6c1);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  transform-origin: top;
+  transition: transform 1s ease;
+  box-shadow: 0 5px 15px rgba(255, 182, 193, 0.5);
+  z-index: 2;
+}
+
+.carta-modal .contenido {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #fff0f5, #ffe6ef);
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: inset 0 0 20px rgba(255, 182, 193, 0.3);
+  transform: rotateX(-180deg);
+  transition: transform 1s ease;
+  backface-visibility: hidden;
+}
+
+.carta-modal.abierta .tapa {
+  transform: rotateX(-180deg);
+}
+
+.carta-modal.abierta .contenido {
+  transform: rotateX(0deg);
+}
+
+.carta-modal h3 {
+  color: #ff82a9;
+  margin-bottom: 1rem;
+}
+
+.carta-modal p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Cerrar botón */
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.8rem;
+  color: #ff82a9;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.3s ease;
+}
+
+.cerrar:hover {
+  transform: scale(1.2);
+}
+
+/* Efecto de brillo */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 192, 203, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(255, 182, 193, 0.8);
+  }
+
+  100% {
+    box-shadow: 0 0 10px rgba(255, 192, 203, 0.3);
+  }
+}
+
+.carta-modal.abierta .contenido {
+  animation: glow 2s infinite ease-in-out;
+}
+
+/* ===== FOOTER CON CONTADOR ===== */
+.footer-contador {
+  width: 100%;
+  background: linear-gradient(90deg, #ffe6ef, #ffd6e0);
+  text-align: center;
+  padding: 1.2rem 0;
+  color: #ff82a9;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  box-shadow: 0 -3px 10px rgba(255, 182, 193, 0.3);
+  animation: fadeInFooter 1.5s ease forwards;
+}
+
+@keyframes fadeInFooter {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-contador p {
+  margin: 0;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  box-shadow: inset 0 0 10px rgba(255, 182, 193, 0.3);
+}
+
+.footer-contador span {
+  font-weight: 700;
+  color: #ff4f8b;
+  transition: color 0.3s;
+}
+
+.footer-contador span:hover {
+  color: #ff82a9;
+}

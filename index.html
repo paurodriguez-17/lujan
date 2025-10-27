@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Álbum de Recuerdos 💖</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Fondo animado -->
+    <canvas id="particles"></canvas>
+
+    <!-- Hero (igual que el tuyo) -->
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Un año lejos, mil recuerdos cerca ✈️</h1>
+            <p>Este álbum está lleno de momentos, risas y cariño que te van a acompañar siempre.</p>
+            <button id="enterBtn">Entrar al álbum</button>
+        </div>
+    </section>
+
+    <!-- Categorías -->
+    <main id="categorias" class="hidden fade-section">
+        <h2>📚 Nuestros capítulos</h2>
+        <div class="categorias-grid">
+            <div class="categoria" data-section="amistad">
+                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=600&q=80"
+                    alt="Amistad">
+                <h3>El comienzo 💫</h3>
+            </div>
+            <div class="categoria" data-section="logros">
+                <img src="https://images.unsplash.com/photo-1558980664-10ea1e38a00d?auto=format&fit=crop&w=600&q=80"
+                    alt="Logros">
+                <h3>Logros juntas 🏆</h3>
+            </div>
+            <div class="categoria" data-section="viaje">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+                    alt="Viaje">
+                <h3>Viajes inolvidables ✈️</h3>
+            </div>
+            <div class="categoria" data-section="momentos">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80"
+                    alt="Momentos">
+                <h3>Momentos eternos 💖</h3>
+            </div>
+        </div>
+
+        <!-- Cartas interactivas con modal -->
+        <h2 class="cartas-titulo">💌 Cartas especiales</h2>
+        <div class="cartas-grid">
+            <div class="carta-portada" data-carta="paula">
+                <div class="carta-portada-contenido">
+                    <h3>💌 De Paula</h3>
+                    <p>Tocá para abrir</p>
+                </div>
+            </div>
+            <div class="carta-portada" data-carta="juli">
+                <div class="carta-portada-contenido">
+                    <h3>💖 De Juli</h3>
+                    <p>Tocá para abrir</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal carta Paula -->
+        <div class="modal-carta" id="modalPaula">
+            <div class="carta-modal">
+                <div class="tapa"></div>
+                <div class="contenido">
+                    <h3>💌 Carta de Paula</h3>
+                    <p>
+                        Gracias por tantos momentos, risas y aventuras.
+                        Este álbum es solo una muestra de todo lo lindo que vivimos y lo mucho que te quiero.
+                        Te deseo un año increíble, lleno de aprendizajes y sueños cumplidos 💕
+                    </p>
+                </div>
+                <span class="cerrar">&times;</span>
+            </div>
+        </div>
+
+        <!-- Modal carta Juli -->
+        <div class="modal-carta" id="modalJuli">
+            <div class="carta-modal">
+                <div class="tapa"></div>
+                <div class="contenido">
+                    <h3>💖 Carta de Juli</h3>
+                    <p>
+                        Te vamos a extrañar muchísimo.
+                        Pero sé que vas a brillar allá también, como siempre lo hacés.
+                        Cada foto, cada palabra, es un pedacito de nosotros para vos ✨
+                    </p>
+                </div>
+                <span class="cerrar">&times;</span>
+            </div>
+        </div>
+
+    </main>
+    <!-- Contenedor del álbum -->
+    <section id="albumSection" class="hidden fade-section"></section>
+    <!-- ===== FOOTER CON CONTADOR ===== -->
+    <footer class="footer-contador">
+        <p>⏳ Faltan <span id="dias"></span> días,
+            <span id="horas"></span> horas,
+            <span id="minutos"></span> minutos y
+            <span id="segundos"></span> segundos
+            para volver a vernos 
+        </p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
