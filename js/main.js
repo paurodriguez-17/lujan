@@ -268,10 +268,12 @@ function initParticles() {
 function initBackgroundSlideshow() {
   const heroEl = document.querySelector(".hero");
   const backgrounds = [
-    "/img/portada.jpeg",
-    "https://images.unsplash.com/photo-1523978591478-c753949ff840?auto=format&fit=crop&w=2000&q=80",
-    "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=2000&q=80"
+    "/img/chicago.jpg",
+    "/img/nyc.jpg",
+    "/img/arg.jpg",
+    "/img/portada.jpeg"
   ];
+
   let current = 0;
 
   const layerA = document.createElement("div");
