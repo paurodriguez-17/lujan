@@ -30,17 +30,31 @@ const categoriasData = {
   amistad: {
     titulo: "El comienzo de nuestra amistad 💫",
     fotos: [
-      { src: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e", texto: "Nuestra primera foto 💕" },
-      { src: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f", texto: "Charlas infinitas ☕" },
-      { src: "https://images.unsplash.com/photo-1535930749574-1399327ce78f", texto: "Donde todo empezó ✨" },
+      { src: "/img/c1.jpeg", texto: "Nuestra primera foto 💕" },
+      { src: "/img/c2.jpeg", texto: "Charlas infinitas ☕" },
+      { src: "/img/c6.jpeg", texto: "Donde todo empezó ✨" },
+      { src: "/img/c4.jpeg", texto: "Charlas infinitas ☕" },
+      { src: "/img/c5.jpeg", texto: "Donde todo empezó ✨" },
+      { src: "/img/c7.jpeg", texto: "Nuestra primera foto 💕" },
+      { src: "/img/c8.jpeg", texto: "Charlas infinitas ☕" },
+      { src: "/img/c9.jpeg", texto: "Donde todo empezó ✨" },
     ],
     carta: "Desde ese primer día supe que ibas a ser alguien importante. ❤️"
   },
   logros: {
     titulo: "Logros juntas 🏆",
     fotos: [
-      { src: "https://images.unsplash.com/photo-1558980664-10ea1e38a00d", texto: "El día que lo logramos 💪" },
-      { src: "https://images.unsplash.com/photo-1551836022-4c4c79ecde51", texto: "Celebrando el éxito 🥂" },
+      { src: "/img/l1.jpeg", texto: "El día que lo logramos 💪" },
+      { src: "/img/l2.jpeg", texto: "Celebrando el éxito 🥂" },
+      { src: "/img/l3.jpeg", texto: "El día que lo logramos 💪" },
+      { src: "/img/l4.jpeg", texto: "Celebrando el éxito 🥂" },
+      { src: "/img/l5.jpeg", texto: "El día que lo logramos 💪" },
+      { src: "/img/l6.jpeg", texto: "Celebrando el éxito 🥂" },
+      { src: "/img/l7.jpeg", texto: "El día que lo logramos 💪" },
+      { src: "/img/l8.jpeg", texto: "Celebrando el éxito 🥂" },
+      { src: "/img/l9.jpeg", texto: "El día que lo logramos 💪" },
+      { src: "/img/l10.jpeg", texto: "Celebrando el éxito 🥂" },
+      { src: "/img/l11.jpeg", texto: "El día que lo logramos 💪" },
     ],
     carta: "Sos capaz de todo, y siempre voy a estar aplaudiéndote. 🌟"
   },
