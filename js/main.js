@@ -40,7 +40,7 @@ const categoriasData = {
       { src: "/img/c9.jpeg", texto: "Donde todo empezó ✨" },
       { src: "/img/c10.jpeg", texto: "Charlas infinitas ☕" },
     ],
-    carta: "Todo empezó en la facu, cuando ninguna entendía lo que explicaba nuestro amor, el Chelo. De ahí salieron las risas, los mates, los enredos y, sin darnos cuenta, la mejor amistad.Lo que empezó con “¿entendiste algo?” terminó siendo imposible de separar."
+    carta: "Todo empezó en la facu, cuando ninguna entendía lo que explicaba nuestro amor, el Chelo. De ahí salieron las risas, los mates, los enredos y, sin darnos cuenta, la mejor amistad. Lo que empezó con “¿entendiste algo?” terminó siendo imposible de separar."
   },
   logros: {
     titulo: "Logros juntas 🏆",
