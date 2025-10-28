@@ -38,8 +38,9 @@ const categoriasData = {
       { src: "/img/c7.jpeg", texto: "Nuestra primera foto 💕" },
       { src: "/img/c8.jpeg", texto: "Charlas infinitas ☕" },
       { src: "/img/c9.jpeg", texto: "Donde todo empezó ✨" },
+      { src: "/img/c10.jpeg", texto: "Charlas infinitas ☕" },
     ],
-    carta: "Desde ese primer día supe que ibas a ser alguien importante. ❤️"
+    carta: "Todo empezó en la facu, cuando ninguna entendía lo que explicaba nuestro amor, el Chelo. De ahí salieron las risas, los mates, los enredos y, sin darnos cuenta, la mejor amistad.Lo que empezó con “¿entendiste algo?” terminó siendo imposible de separar."
   },
   logros: {
     titulo: "Logros juntas 🏆",
@@ -55,8 +56,9 @@ const categoriasData = {
       { src: "/img/l9.jpeg", texto: "El día que lo logramos 💪" },
       { src: "/img/l10.jpeg", texto: "Celebrando el éxito 🥂" },
       { src: "/img/l11.jpeg", texto: "El día que lo logramos 💪" },
+      { src: "/img/l12.jpeg", texto: "El día que lo logramos 💪" },
     ],
-    carta: "Sos capaz de todo, y siempre voy a estar aplaudiéndote. 🌟"
+    carta: "Después de mil parciales, cafés, un par de porros, crisis y charlas eternas, lo logramos. Nos recibimos juntas (con chatgpt) después de cansarlo a nuestro hermano Zakhour con nuestra presencia."
   },
   viaje: {
     titulo: "Viaje inolvidable ✈️",
@@ -70,35 +72,56 @@ const categoriasData = {
       { src: "/img/v7.jpeg", texto: "Atardeceres 🌅" },
       { src: "/img/v8.jpeg", texto: "Atardeceres 🌅" },
       { src: "/img/v9.jpeg", texto: "Atardeceres 🌅" },
-      { src: "/img/v10.jpeg", texto: "Atardeceres 🌅" },
       { src: "/img/v11.jpeg", texto: "Atardeceres 🌅" },
       { src: "/img/v12.jpeg", texto: "Atardeceres 🌅" },
-      { src: "/img/v13.jpeg", texto: "Atardeceres 🌅" },
       { src: "/img/v14.jpeg", texto: "Atardeceres 🌅" },
       { src: "/img/v15.jpeg", texto: "Atardeceres 🌅" },
       { src: "/img/v16.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/v18.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/v19.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/v20.mp4", texto: "Atardeceres 🌅" },
+      { src: "/img/v21.mp4", texto: "Atardeceres 🌅" },
+      { src: "/img/v22.jpeg", texto: "Atardeceres 🌅" },
     ],
-    carta: "Cada kilómetro valió la pena. Que tus nuevos caminos sean igual de mágicos. 💖"
+    carta: "Entre las alcoholizada que nos pegabamos todos los días, las charlas eternas hasta las 5 am y las risas que no se terminaban más, no hubo un solo momento aburrido. Fue ese tipo de viaje que te hace pensar “esto hay que repetirlo sí o sí (sin 40hs de viaje xfa)”. Lo mejor no fue el lugar, sino nosotras, y todo lo que tomamos juntas"
   },
   momentos: {
     titulo: "Momentos que se vuelven eternos 💖",
     fotos: [
-      { src: "https://images.unsplash.com/photo-1517841905240-472988babdf9", texto: "Tu risa ese día fue todo 😍" },
-      { src: "https://images.unsplash.com/photo-1607083206968-13611e3b9a7d", texto: "Momentos simples 💫" },
+      { src: "/img/m1.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/m2.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/m3.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/m4.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/m5.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/m6.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/m7.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/m8.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/m9.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/m10.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/m11.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/m12.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/m13.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/m14.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/m15.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/m16.jpeg", texto: "Atardeceres 🌅" },
+      { src: "/img/m17.jpeg", texto: "Atardeceres 🌅" },
     ],
-    carta: "Aunque pase el tiempo, hay recuerdos que quedan grabados en el corazón. 💌"
+    carta: "Las pijamadas hablando de sexo toda la noche, los kilos de papas fritas que desaparecieron en minutos, los cafés eternos después de la facu donde arreglábamos el mundo, y los puchos post-clase. Son esos momentos los que hacen que todo valga la pena."
   }
 };
-
 function openCategoria(key) {
   const section = document.getElementById("albumSection");
   const categorias = document.getElementById("categorias");
   const data = categoriasData[key];
   let current = 0;
 
-  // Combinar fotos + carta final
+  // Combinar fotos, videos y carta final
   const slidesData = [
-    ...data.fotos.map(f => ({ tipo: "foto", src: f.src, texto: f.texto })),
+    ...(data.fotos || []).map(f => ({
+      tipo: f.src.endsWith(".mp4") ? "video" : "foto",
+      src: f.src,
+      texto: f.texto
+    })),
     { tipo: "carta", texto: data.carta }
   ];
 
@@ -106,21 +129,28 @@ function openCategoria(key) {
     <div class="album-view">
       <h2>${data.titulo}</h2>
       <div class="carousel">
-        ${slidesData.map((f, i) => `
-          <div class="slide ${i === 0 ? 'active' : ''}">
+        ${slidesData
+      .map(
+        (f, i) => `
+          <div class="slide ${i === 0 ? "active" : ""}">
             ${f.tipo === "foto"
-      ? `<img src="${f.src}?auto=format&fit=crop&w=900&q=80" alt="">
+            ? `<img src="${f.src}" alt="">
                    <div class="note">${f.texto}</div>`
-      : `<div class="carta-sobre" id="cartaSobre">
-                     <div class="tapa"></div>
-                     <div class="contenido">
-                       <h3>💌 Carta final</h3>
-                       <p>${f.texto}</p>
-                     </div>
+            : f.tipo === "video"
+              ? `<div class="video-container">
+     <video src="${f.src}" preload="metadata" playsinline></video>
+     <div class="play-btn"></div>
+   </div>
+   <div class="note">${f.texto}</div>`
+              : `<div class="carta-final">
+                     <h3>💌 Carta final</h3>
+                     <p>${f.texto}</p>
                    </div>`
-    }
+          }
           </div>
-        `).join('')}
+        `
+      )
+      .join("")}
         <div class="arrow left" id="prevSlide">❮</div>
         <div class="arrow right" id="nextSlide">❯</div>
       </div>
@@ -136,11 +166,9 @@ function openCategoria(key) {
   const prevBtn = section.querySelector("#prevSlide");
   let startX = 0;
 
-  // Flechas
   nextBtn.onclick = nextSlide;
   prevBtn.onclick = prevSlide;
 
-  // Swipe en móvil
   const carousel = section.querySelector(".carousel");
   carousel.addEventListener("touchstart", e => (startX = e.touches[0].clientX));
   carousel.addEventListener("touchend", e => {
@@ -149,7 +177,6 @@ function openCategoria(key) {
     else if (endX - startX > 50) prevSlide();
   });
 
-  // Scroll en PC
   carousel.addEventListener("wheel", e => {
     if (e.deltaY > 0) nextSlide();
     else prevSlide();
@@ -167,16 +194,29 @@ function openCategoria(key) {
     slides[current].classList.add("active");
   }
 
-  // Efecto abrir sobre
-  const sobre = document.getElementById("cartaSobre");
-  if (sobre) {
-    sobre.addEventListener("click", () => sobre.classList.toggle("abierto"));
-  }
-
   document.getElementById("volverCategorias").onclick = () => {
     section.classList.add("hidden");
     categorias.classList.remove("hidden");
   };
+  // Botón de play personalizado
+  section.querySelectorAll(".video-container").forEach(container => {
+    const video = container.querySelector("video");
+    const playBtn = container.querySelector(".play-btn");
+
+    playBtn.addEventListener("click", () => {
+      playBtn.classList.add("fade-out");
+      video.play();
+    });
+
+    video.addEventListener("pause", () => {
+      playBtn.classList.remove("fade-out");
+    });
+
+    video.addEventListener("ended", () => {
+      playBtn.classList.remove("fade-out");
+    });
+  });
+
 }
 /* ===== FONDO ANIMADO ===== */
 function initParticles() {

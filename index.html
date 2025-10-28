@@ -10,10 +10,7 @@
 </head>
 
 <body>
-    <!-- Fondo animado -->
     <canvas id="particles"></canvas>
-
-    <!-- Hero (igual que el tuyo) -->
     <section class="hero">
         <div class="overlay"></div>
         <div class="content">
@@ -22,34 +19,27 @@
             <button id="enterBtn">Entrar al álbum</button>
         </div>
     </section>
-
-    <!-- Categorías -->
     <main id="categorias" class="hidden fade-section">
         <h2>📚 Nuestros capítulos</h2>
         <div class="categorias-grid">
             <div class="categoria" data-section="amistad">
-                <img src="/img/c1.jpeg"
-                    alt="Amistad">
+                <img src="/img/c1.jpeg" alt="Amistad">
                 <h3>El comienzo 💫</h3>
             </div>
             <div class="categoria" data-section="logros">
-                <img src="/img/l1.jpeg"
-                    alt="Logros">
+                <img src="/img/l1.jpeg" alt="Logros">
                 <h3>Logros juntas 🏆</h3>
             </div>
             <div class="categoria" data-section="viaje">
-                <img src="/img/v1.jpeg"
-                    alt="Viaje">
+                <img src="/img/v17.jpeg" alt="Viaje">
                 <h3>Viajes inolvidables ✈️</h3>
             </div>
             <div class="categoria" data-section="momentos">
-                <img src="/img/m1.jpeg"
-                    alt="Momentos">
+                <img src="/img/m1.jpeg" alt="Momentos">
                 <h3>Momentos eternos 💖</h3>
             </div>
         </div>
 
-        <!-- Cartas interactivas con modal -->
         <h2 class="cartas-titulo">💌 Cartas especiales</h2>
         <div class="cartas-grid">
             <div class="carta-portada" data-carta="paula">
@@ -65,24 +55,24 @@
                 </div>
             </div>
         </div>
-
-        <!-- Modal carta Paula -->
         <div class="modal-carta" id="modalPaula">
             <div class="carta-modal">
                 <div class="tapa"></div>
                 <div class="contenido">
                     <h3>💌 Carta de Paula</h3>
                     <p>
-                        Gracias por tantos momentos, risas y aventuras.
-                        Este álbum es solo una muestra de todo lo lindo que vivimos y lo mucho que te quiero.
-                        Te deseo un año increíble, lleno de aprendizajes y sueños cumplidos 💕
+                        Este álbum es solo una muestra de todo lo lindo que vivimos y lo mucho que te quiero, estoy tan
+                        agradecida con la vida por haberte cruzado en mi camino.
+                        Gracias por ser esa persona que siempre está, sin importar el momento, la distancia o las
+                        circunstancias.
+                        Te deseo todo lo lindo de esta vida, porque te lo merecés más que nadie.
+                        La distancia nunca fue, ni va a ser, un impedimento para nosotras.
+                        Te adoro, gracias por todo 💕
                     </p>
                 </div>
                 <span class="cerrar">&times;</span>
             </div>
         </div>
-
-        <!-- Modal carta Juli -->
         <div class="modal-carta" id="modalJuli">
             <div class="carta-modal">
                 <div class="tapa"></div>
@@ -99,15 +89,13 @@
         </div>
 
     </main>
-    <!-- Contenedor del álbum -->
     <section id="albumSection" class="hidden fade-section"></section>
-    <!-- ===== FOOTER CON CONTADOR ===== -->
     <footer class="footer-contador">
         <p>⏳ Faltan <span id="dias"></span> días,
             <span id="horas"></span> horas,
             <span id="minutos"></span> minutos y
             <span id="segundos"></span> segundos
-            para volver a vernos 
+            para volver a vernos
         </p>
     </footer>
 
